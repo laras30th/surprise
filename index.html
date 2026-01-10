@@ -8,48 +8,22 @@
   :root{--bg1:#ff6ec7;--bg2:#6b5cff}
   html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,-apple-system}
   body{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;text-align:center;padding:24px}
-  .card{backdrop-filter:blur(6px);background:rgba(0,0,0,0.18);padding:28px 34px;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,0.25);max-width:720px}
-  .meme{display:block;margin:0 auto 14px auto;max-width:100%;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
-  h1{margin:0 0 8px;font-size:1.6rem;letter-spacing:.6px}
+  .card{backdrop-filter:blur(6px);background:rgba(0,0,0,0.18);padding:28px 34px;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,0.25);max-width:720px;width:100%}
+  .meme{display:block;margin:14px auto 0 auto;max-width:100%;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+  h1{margin:0 0 12px;font-size:1.8rem;letter-spacing:.6px}
   #t{font-weight:800;font-size:2.6rem}
-  small{display:block;margin-top:10px;opacity:.95;color:rgba(255,255,255,0.95);font-size:.95rem}
+  small{display:block;margin-top:14px;opacity:.95;color:rgba(255,255,255,0.95);font-size:.95rem}
   @media(min-width:700px){#t{font-size:3.6rem}}
 </style>
 </head>
+
 <body>
   <div class="card">
-    <h1>Lara's 30th surprise</h1>
 
-    <!-- User-uploaded image placed above the countdown -->
-   <img src="image.png" alt="Meme" class="meme" />
+    <h1>42 days in a Matchbox</h1>
+
     <div id="t">—</div>
-    <small>Auto-starts when first opened. or in other words on 21 February 2026</small>
-  </div>
 
-<script>
-const KEY = 'countdownEndUtcMs';
-const D42 = 42 * 24 * 60 * 60 * 1000;
-let end = Number(localStorage.getItem(KEY)) || 0;
-if (!end) {
-  end = Date.now() + D42;
-  localStorage.setItem(KEY, String(end));
-}
-const el = document.getElementById('t');
+    <img src="image.png" alt="Meme" class="meme" />
 
-function fmt(n){ return String(n).padStart(2,'0'); }
-
-function tick(){
-  const ms = end - Date.now();
-  if (ms <= 0){ el.textContent = '🎉 Done'; clearInterval(iv); return; }
-  const s = Math.floor(ms/1000);
-  const d = Math.floor(s/86400);
-  const h = Math.floor((s%86400)/3600);
-  const m = Math.floor((s%3600)/60);
-  const sec = s%60;
-  el.textContent = `${d}d ${fmt(h)}:${fmt(m)}:${fmt(sec)}`;
-}
-tick();
-const iv = setInterval(tick,1000);
-</script>
-</body>
-</html>
+    <small>
