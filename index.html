@@ -12,7 +12,6 @@
     background:linear-gradient(135deg,var(--bg1),var(--bg2));
     color:#fff;text-align:center;padding:24px
   }
-
   .card{
     background:rgba(0,0,0,0.28);
     border:1px solid rgba(255,255,255,0.14);
@@ -23,14 +22,17 @@
     backdrop-filter:blur(10px);
     animation:pop .7s ease-out both;
   }
-
   h1{
-    margin:0 0 10px;
+    margin:0 0 8px;
     font-size:2.05rem;
     letter-spacing:.8px;
     font-weight:850;
   }
-
+  .sub{
+    margin:0 0 14px;
+    font-size:1.05rem;
+    opacity:.96;
+  }
   .divider{
     height:1px;
     width:min(520px,100%);
@@ -38,7 +40,6 @@
     background:rgba(255,255,255,0.22);
     border-radius:99px;
   }
-
   #t{
     font-weight:900;
     font-size:2.7rem;
@@ -46,7 +47,6 @@
     text-shadow:0 10px 30px rgba(0,0,0,0.35);
     animation:pulse 2.2s ease-in-out infinite;
   }
-
   .meme{
     display:block;
     margin:18px auto 0;
@@ -57,7 +57,6 @@
     box-shadow:0 16px 40px rgba(0,0,0,0.35);
     border:1px solid rgba(255,255,255,0.10);
   }
-
   small{
     display:block;
     margin-top:16px;
@@ -66,17 +65,14 @@
     font-size:1.02rem;
     line-height:1.35;
   }
-
   @media(min-width:700px){
     #t{font-size:3.9rem}
     h1{font-size:2.35rem}
   }
-
   @keyframes pop{
     from{transform:translateY(8px);opacity:0}
     to{transform:translateY(0);opacity:1}
   }
-
   @keyframes pulse{
     0%,100%{transform:scale(1);filter:brightness(1)}
     50%{transform:scale(1.02);filter:brightness(1.12)}
@@ -86,7 +82,8 @@
 
 <body>
   <div class="card">
-    <h1>42 days in a Matchbox</h1>
+    <h1>42 days in match box</h1>
+    <p class="sub">Your suprise will be in</p>
     <div class="divider"></div>
 
     <div id="t">—</div>
@@ -115,11 +112,11 @@ function tick(){
   const ms = end - Date.now();
   if (ms <= 0){ el.textContent = '🎉 Done'; clearInterval(iv); return; }
   const totalSec = Math.floor(ms / 1000);
-  const d = Math.floor(totalSec / 86400);
+  const days = Math.floor(totalSec / 86400);
   const h = Math.floor((totalSec % 86400) / 3600);
   const m = Math.floor((totalSec % 3600) / 60);
   const s = totalSec % 60;
-  el.textContent = `${d}d ${fmt(h)}:${fmt(m)}:${fmt(s)}`;
+  el.textContent = `${days} days ${fmt(h)}:${fmt(m)}:${fmt(s)}`;
 }
 
 tick();
