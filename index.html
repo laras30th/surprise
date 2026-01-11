@@ -20,63 +20,17 @@
     box-shadow:0 14px 55px rgba(0,0,0,0.35);
     max-width:760px;width:100%;
     backdrop-filter:blur(10px);
-    animation:pop .7s ease-out both;
   }
-  h1{
-    margin:0 0 8px;
-    font-size:2.05rem;
-    letter-spacing:.8px;
-    font-weight:850;
-  }
-  .sub{
-    margin:0 0 14px;
-    font-size:1.05rem;
-    opacity:.96;
-  }
-  .divider{
-    height:1px;
-    width:min(520px,100%);
-    margin:10px auto 14px;
-    background:rgba(255,255,255,0.22);
-    border-radius:99px;
-  }
-  #t{
-    font-weight:900;
-    font-size:2.7rem;
-    line-height:1.05;
-    text-shadow:0 10px 30px rgba(0,0,0,0.35);
-    animation:pulse 2.2s ease-in-out infinite;
-  }
+  h1{margin:0 0 8px;font-size:2.05rem;font-weight:850}
+  .sub{margin:0 0 14px;font-size:1.05rem;opacity:.96}
+  #t{font-weight:900;font-size:2.7rem}
   .meme{
-    display:block;
-    margin:18px auto 0;
-    max-width:520px;
-    width:100%;
-    height:auto;
-    border-radius:16px;
-    box-shadow:0 16px 40px rgba(0,0,0,0.35);
-    border:1px solid rgba(255,255,255,0.10);
+    display:block;margin:18px auto 0;
+    max-width:520px;width:100%;height:auto;
+    border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,0.35)
   }
-  small{
-    display:block;
-    margin-top:16px;
-    opacity:.98;
-    color:rgba(255,255,255,0.96);
-    font-size:1.02rem;
-    line-height:1.35;
-  }
-  @media(min-width:700px){
-    #t{font-size:3.9rem}
-    h1{font-size:2.35rem}
-  }
-  @keyframes pop{
-    from{transform:translateY(8px);opacity:0}
-    to{transform:translateY(0);opacity:1}
-  }
-  @keyframes pulse{
-    0%,100%{transform:scale(1);filter:brightness(1)}
-    50%{transform:scale(1.02);filter:brightness(1.12)}
-  }
+  small{display:block;margin-top:16px;font-size:1.02rem;line-height:1.35}
+  @media(min-width:700px){#t{font-size:3.9rem}}
 </style>
 </head>
 
@@ -84,20 +38,19 @@
   <div class="card">
     <h1>42 Days in a Matchbox</h1>
     <p class="sub">Your surprise will be in</p>
-    <div class="divider"></div>
 
     <div id="t">—</div>
 
     <img src="image.png" alt="Meme" class="meme" />
 
     <small>
-      The countdown ends on 20 February 2026.
+      The countdown to your birthday surprise ends on 21 February 2026.
     </small>
   </div>
 
 <script>
-// Guaranteed fixed end moment: 20 Feb 2026 00:00 UK time (UK is UTC+0 in February)
-const END_UTC_MS = Date.parse('2026-02-20T00:00:00Z');
+// Fixed guaranteed end date: 21 February 2026, 00:00 UK time
+const END_UTC_MS = Date.parse('2026-02-21T00:00:00Z');
 
 const el = document.getElementById('t');
 function fmt(n){ return String(n).padStart(2,'0'); }
